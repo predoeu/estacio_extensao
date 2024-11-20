@@ -116,64 +116,64 @@ function App() {
   };
 
   return (
-  <div style={{ padding: '20px', fontFamily: 'Roboto, sans-serif', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-    <h1 style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>
-      Calculadora de Pontos Por Equipe do Circuito Pernambucano de Xadrez Escolar
-    </h1>
+    <div style={{ padding: '20px', fontFamily: 'Roboto, sans-serif', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h1 style={{ fontSize: '24px', fontWeight: 'bold', textAlign: 'center', marginBottom: '20px' }}>
+        Calculadora de Pontos Por Equipe do Circuito Pernambucano de Xadrez Escolar
+      </h1>
 
-    <input
-      type="file"
-      accept=".xlsx,.xls"
-      onChange={handleFileUpload1}
-      style={{
-        display: 'block',
-        marginBottom: '15px',
-        padding: '10px',
-        borderRadius: '8px',
-        border: '1px solid #DDDDDD',
-        width: '100%',
-        maxWidth: '400px',
-        fontSize: '16px',
-      }}
-    />
+      <input
+        type="file"
+        accept=".xlsx,.xls"
+        onChange={handleFileUpload1}
+        style={{
+          display: 'block',
+          marginBottom: '15px',
+          padding: '10px',
+          borderRadius: '8px',
+          border: '1px solid #DDDDDD',
+          width: '100%',
+          maxWidth: '400px',
+          fontSize: '16px',
+        }}
+      />
 
-    <input
-      type="file"
-      accept=".xlsx,.xls"
-      onChange={handleFileUpload2}
-      style={{
-        display: 'block',
-        marginBottom: '20px',
-        padding: '10px',
-        borderRadius: '8px',
-        border: '1px solid #DDDDDD',
-        width: '100%',
-        maxWidth: '400px',
-        fontSize: '16px',
-      }}
-    />
+      <input
+        type="file"
+        accept=".xlsx,.xls"
+        onChange={handleFileUpload2}
+        style={{
+          display: 'block',
+          marginBottom: '20px',
+          padding: '10px',
+          borderRadius: '8px',
+          border: '1px solid #DDDDDD',
+          width: '100%',
+          maxWidth: '400px',
+          fontSize: '16px',
+        }}
+      />
 
-    <button
-      onClick={handleCreateExcel}
-      style={{
-        padding: '12px 20px',
-        backgroundColor: '#3b82f6',
-        color: '#ffffff',
-        border: 'none',
-        borderRadius: '8px',
-        fontSize: '16px',
-        cursor: 'pointer',
-        transition: 'background-color 0.3s ease',
-      }}
-      onMouseOver={(e) => (e.target.style.backgroundColor = '#2563eb')}
-      onMouseOut={(e) => (e.target.style.backgroundColor = '#3b82f6')}
-    >
-      Calcular e Baixar Excel
-    </button>
-  </div>
-);
+      <button
+        onClick={handleCreateExcel}
+        style={{
+          padding: '12px 20px',
+          backgroundColor: '#3b82f6',
+          color: '#ffffff',
+          border: 'none',
+          borderRadius: '8px',
+          fontSize: '16px',
+          cursor: 'pointer',
+        }}
+      >
+        Gerar Arquivo Excel
+      </button>
 
+      {excelData1 && <pre>{JSON.stringify(excelData1, null, 2)}</pre>}
+      {excelData2 && <pre>{JSON.stringify(excelData2, null, 2)}</pre>}
+    </div>
+  );
 }
 
-
-export default App;
+// Iniciando o React
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
